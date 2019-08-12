@@ -59,18 +59,23 @@ public class Numeros_Amigos {
 
 
 public static void narcisista(int a){
-        double cifras=a,cont=0,resto=0;
+        int cifras=a,cont=0,resto=0;
         double total=0;
-        for(int i=0;i<a;i++){
-            if (cifras>0) {
-                resto = cifras % 10;
-                total+=Math.pow(resto,a);
-                cifras=cifras/10;
+
+        for(int j=0;j<10;j++){
+            if(a>0){
+                a=a/10;
+                cont++;
             }
         }
+        a=cifras;
 
+        for(int i=0;i<cont;i++){
+                resto = cifras % 10;
+                total=total+Math.pow(resto,cont);
+                cifras=cifras/10;
 
-
+        }
           if (a==total) {
               System.out.println("Es narcisista");
           }else {
